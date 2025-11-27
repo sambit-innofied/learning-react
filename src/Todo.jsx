@@ -1,0 +1,46 @@
+import React, { useState } from "react";
+
+function Todo() {
+  const [newItem, setNewItem] = useState("hello");
+  const [todos, setTodos] = useState("hello");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    setTodos((currentTodos) => {
+      return [
+        ...currentTodos,
+        { id: crypto.randomUUID(), title: newItem, completed: false },
+      ];
+    });
+  }
+
+  return (
+    <>
+      <form onSubmit={handleSubmit} className="new-item-form" action="">
+        <div className="form-row">
+          <label>New Item</label>
+          <input
+            value={newItem}
+            onChange={(e) => setNewItem(e.target.value)}
+            type="text"
+            id="item"
+          />
+        </div>
+        <button className="btn">Add</button>
+      </form>
+      <h1 className="header">Todo List</h1>
+      <ul className="list">
+        <li>
+          <label htmlFor="">
+            <input type="checkbox" />
+            item 1
+          </label>
+          <button className="btn btn-danger">Delete</button>
+        </li>
+      </ul>
+    </>
+  );
+}
+
+export default Todo;
