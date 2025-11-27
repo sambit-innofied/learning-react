@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 function Todo() {
-  const [newItem, setNewItem] = useState("hello");
-  const [todos, setTodos] = useState("hello");
+  const [newItem, setNewItem] = useState("");
+  const [todos, setTodos] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
