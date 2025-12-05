@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MyComp from "./MyComp";
+import MyComp from "./Others/MyComp";
 
 function Useeffect() {
   const [visible, setVisible] = useState(true);

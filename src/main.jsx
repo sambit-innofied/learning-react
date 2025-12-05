@@ -1,14 +1,16 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./style.css";
-import App from "./App.jsx";
-import Franzkafka from "./Franzkafka.jsx";
-import Todo from "./Todo.jsx";
+import Franzkafka from "./Others/Franzkafka.jsx";
+import Todo from "./Others/Todo.jsx";
 import Useeffect from "./Useeffect.jsx";
-import Timer from "./Timer.jsx";
+import Timer from "./Others/Timer.jsx";
+import App from "./contextAPI/App.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Timer />
+    <CounterProvider>
+      <App />
+    </CounterProvider>
   </StrictMode>
 );
